@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Travels – Ticket Booking & Travel Agency</title>
+  <style>
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f5f7fa; color:#333; }
+    header { background:#0d6efd; color:#fff; padding:20px; }
+    header h1 { margin:0; }
+    nav a { color:#fff; margin-right:15px; text-decoration:none; font-weight:bold; }
+    .container { max-width:1100px; margin:auto; padding:40px 20px; }
+    .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:#fff; border-radius:16px; padding:18px; box-shadow:0 10px 22px rgba(0,0,0,0.12); transition:transform .3s, box-shadow .3s; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 18px 36px rgba(0,0,0,0.18); }
+    .card h3 { color:#0d6efd; margin:10px 0 6px; }
+    /* IMAGE CARD */
+    .img-card { padding:0; overflow:hidden; }
+    .img-card img { width:100%; height:140px; object-fit:cover; display:block; }
+    .img-card .content { padding:14px; text-align:center; }
+    .badge { display:inline-block; background:#eef4ff; color:#0d6efd; padding:4px 10px; border-radius:999px; font-size:12px; margin-bottom:8px; }
+    .booking-form { background:#fff; padding:30px; border-radius:16px; box-shadow:0 10px 22px rgba(0,0,0,0.12); }
+    input, select, button { width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc; }
+    button { background:#0d6efd; color:#fff; border:none; font-size:16px; cursor:pointer; }
+    button:hover { background:#0b5ed7; }
+    footer { background:#222; color:#fff; text-align:center; padding:20px; }
+    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25d366; color:#fff; padding:15px 22px; border-radius:50px; text-decoration:none; font-weight:bold; }
+    iframe { width:100%; border-radius:12px; border:0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⭐ Star Travels | स्टार ट्रैवल्स</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="container" id="services">
+  <h2>हमारी सेवाएं</h2>
+  <div class="services">
+    <div class="card"><h3>🚌 Bus Ticket</h3><p>सभी रूट की बस टिकट बुकिंग।</p></div>
+    <div class="card"><h3>🚆 Train Ticket</h3><p>IRCTC एवं  सहायता।</p></div>
+    <div class="card"><h3>✈️ Flight Ticket</h3><p>Domestic & International Flights।</p></div>
+    <div class="card"><h3>🏖️ Tour Package</h3><p>Family एवं Group Tour Packages।</p></div>
+  </div>
+</section>
+
+<section class="container" id="flights">
+  <h2>✈️ Flight Companies</h2>
+  <div class="services">
+    <div class="card img-card">
+      <img src="https://images.unsplash.com/photo-1517654443271-1c3b1a1f6a57" alt="IndiGo">
+      <div class="content"><span class="badge">Popular</span><h3>IndiGo</h3><p>Low-cost, on-time flights.</p></div>
+    </div>
+    <div class="card img-card">
+      <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96" alt="Air India">
+      <div class="content"><span class="badge">National Carrier</span><h3>Air India</h3><p>Domestic & International.</p></div>
+    </div>
+    <div class="card img-card">
+      <img src="https://images.unsplash.com/photo-1544016768-982d1554f0b9" alt="Vistara">
+      <div class="content"><span class="badge">Premium</span><h3>Vistara</h3><p>Comfort & service.</p></div>
+    </div>
+    <div class="card img-card">
+      <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9" alt="Akasa Air">
+      <div class="content"><span class="badge">New</span><h3>Akasa Air</h3><p>Value fares.</p></div>
+    </div>
+  </div>
+</sec
+
+<section class="container" id="trains">
+  <h2>🚆 Popular Train Services</h2>
+  <div class="services">
+    <div class="card"><p><strong>Vande Bharat Express</strong></p></div>
+    <div class="card"><p><strong>Rajdhani Express</strong></p></div>
+    <div class="card"><p><strong>Shatabdi Express</strong></p></div>
+    <div class="card"><p><strong>Duronto Express</strong></p></div>
+  </div>
+</section>
+
+<!-- SINGLE BOOKING SECTION -->
+<section class="container" id="booking">
+  <div class="booking-form">
+    <h2>Ticket / Tour Booking Form</h2>
+    <form onsubmit="sendWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="पूरा नाम" required>
+      <input type="tel" id="mobile" placeholder="मोबाइल नंबर (10 अंक)" pattern="[0-9]{10}" required>
+
+      <select id="type" required>
+        <option value="">बुकिंग का प्रकार चुनें</option>
+        <option>Bus Ticket</option>
+        <option>Train Ticket</option>
+        <option>Flight Ticket</option>
+        <option>Tour Package</option>
+      </select>
+
+      <input type="text" id="from" placeholder="कहाँ से" required>
+      <input type="text" id="to" placeholder="कहाँ तक" required>
+      <input type="date" id="date" required>
+
+      <button type="submit">WhatsApp पर Booking भेजें</button>
+    </form>
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>📞 Phone:</strong> +91 7004545260</p>
+  <p><strong>📍 Address:</strong> Commercial Chowk, Laheriasarai, Darbhanga, Bihar</p>
+  <iframe height="350" src="https://www.google.com/maps?q=Commercial%20Chowk%20Laheriasarai%20Darbhanga%20Bihar&output=embed"></iframe>
+</section>
+
+<footer>
+  <p>© 2025 Star Travels | All Rights Reserved</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917004545260?text=नमस्ते%20Star%20Travels,%20मुझे%20टिकट%20बुक%20करना%20है" target="_blank">WhatsApp Booking</a>
+
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var mobile = document.getElementById("mobile").value;
+  var type = document.getElementById("type").value;
+  var from = document.getElementById("from").value;
+  var to = document.getElementById("to").value;
+  var date = document.getElementById("date").value;
+
+  var msg =
+    "नमस्ते Star Travels,%0A%0A" +
+    "नाम: " + name + "%0A" +
+    "मोबाइल: " + mobile + "%0A" +
+    "बुकिंग प्रकार: " + type + "%0A" +
+    "From: " + from + "%0A" +
+    "To: " + to + "%0A" +
+    "Date: " + date;
+
+  window.open("https://wa.me/917004545260?text=" + msg, "_blank");
+}
+</script>
+
+</body>
+</html>
